@@ -1,4 +1,4 @@
-#首页搜索
+#首页 搜索
 import time
 from appium import webdriver
 from utils.Encapsulation_position import Action
