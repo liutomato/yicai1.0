@@ -1,4 +1,4 @@
-
+#账号密码登录
 from appium import webdriver
 import unittest, time
 from Operator_case import Operator_login_pw
