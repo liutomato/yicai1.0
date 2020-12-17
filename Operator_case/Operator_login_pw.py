@@ -1,4 +1,4 @@
-#账号 密码登录
+#账号密码登录
 import unittest, time
 from appium import webdriver
 from utils.Encapsulation_position import Action
