@@ -1,4 +1,4 @@
-#首页banner点击
+#首页banner 点击
 from utils.Encapsulation_position import Action
 class Op_home_banner:
     def test_homebanner(driver):
