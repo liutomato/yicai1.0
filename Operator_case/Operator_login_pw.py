@@ -1,10 +1,10 @@
 #账号 密码登录
-import unittest, time
-from appium import webdriver
+
 from utils.Encapsulation_position import Action
 class OP_Login_pw:
     def test_login(driver):
         u"""登录"""
+        print(111)
         Action.findChild(driver,'com.cbnweekly:id/tabLL','我的').click()
         Action.findId(driver,'com.cbnweekly:id/editData').click()#我的资料
         Action.findId(driver,'com.cbnweekly:id/changeLoginModel').click()#切换至账号密码登录

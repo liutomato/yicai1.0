@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>搜索功能测试报告</title>
+    <title>第一财经测试报告</title>
     <meta name="generator" content="HTMLTestRunner 0.9.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js"></script>
@@ -357,7 +357,7 @@ function showOutput(id, name) {
     <h1 style="margin-bottom: 0px;">seldom</h1>
     <div class="navbar-collapse collapse">
         <ul class="navbar-nav ml-auto">
-            <h3 style="float: right;">搜索功能测试报告</h3>
+            <h3 style="float: right;">第一财经测试报告</h3>
         </ul>
     </div>
 </nav>
@@ -367,9 +367,9 @@ function showOutput(id, name) {
         <div class="card-body my-2">
         <table class="table my-0">
             <tbody>
-            <tr><td>Start Time:</td><td class="text-right">2020-11-29 21:42:35</td></tr>
-<tr><td>Duration:</td><td class="text-right">0:00:33.294330</td></tr>
-<tr><td>Status:</td><td class="text-right">Passed:1 Errors:1</td></tr>
+            <tr><td>Start Time:</td><td class="text-right">2020-12-24 15:42:00</td></tr>
+<tr><td>Duration:</td><td class="text-right">0:00:22.414077</td></tr>
+<tr><td>Status:</td><td class="text-right">Passed:1</td></tr>
 
             <tr><td>Description:</td><td class="text-right">用例执行情况：</td></tr>
             </tbody>
@@ -384,7 +384,7 @@ function showOutput(id, name) {
     <a>PASSED</a><br>
     <h2 class="d-flex align-items-center mb-0 font-weight-light fail-color">0</h2>
     <a>FAILED</a>
-    <h2 class="d-flex align-items-center mb-0 font-weight-light error-color">1</h2>
+    <h2 class="d-flex align-items-center mb-0 font-weight-light error-color">0</h2>
     <a>ERRORS</a><br>
     <h2 class="d-flex align-items-center mb-0 font-weight-light skip-color">0</h2>
     <a>SKIPED</a><br>
@@ -417,103 +417,28 @@ function showOutput(id, name) {
     </tr>
 </thead>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>test_home_search.SearchTest</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c1.1',1)">Detail</a></td>
     <td>&nbsp;</td>
 </tr>
 
-<tr id='et1.1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_search: 搜索</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_et1.1.1')" >
-        error</a>
-    <div id='div_et1.1.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_et1.1.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-et1.1.1: resourceId("com.cbnweekly:id/tabLL").childSelector(text("我的"))
-Traceback (most recent call last):
-  File "D:\appium自动化\yicai\testcase\test_home_search.py", line 20, in test_search
-    Operator_login_pw.OP_Login_pw.test_login(self.driver)
-  File "D:\appium自动化\yicai\Operator_case\Operator_login_pw.py", line 10, in test_login
-    Action.findId(driver,'com.cbnweekly:id/changeLoginModel').click()#切换至账号密码登录
-  File "D:\appium自动化\yicai\utils\Encapsulation_position.py", line 8, in findId
-    f=WebDriverWait(driver,30).until(lambda driver:driver.find_element_by_id(id))
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\support\wait.py", line 71, in until
-    value = method(self._driver)
-  File "D:\appium自动化\yicai\utils\Encapsulation_position.py", line 8, in &lt;lambda&gt;
-    f=WebDriverWait(driver,30).until(lambda driver:driver.find_element_by_id(id))
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 360, in find_element_by_id
-    return self.find_element(by=By.ID, value=id_)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\webdriver.py", line 281, in find_element
-    'value': value})['value']
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 31, in check_response
-    raise wde
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\appium\webdriver\errorhandler.py", line 26, in check_response
-    super().check_response(response)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-    <td></td>
-</tr>
-
-<tr class='passClass'>
-    <td>test_login_pw.LoginTest</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c1.2',1)">Detail</a></td>
-    <td>&nbsp;</td>
-</tr>
-
-<tr id='pt1.2.1' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_login: 登录</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2.1')" >
-        pass</a>
-    <div id='div_pt1.2.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.2.1: resourceId("com.cbnweekly:id/tabLL").childSelector(text("我的"))
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-    </td>
+<tr id='pt1.1.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_search: 搜索</div></td>
+    <td colspan='5' align='center'>pass</td>
     <td></td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>2</td>
+    <td>1</td>
     <td class="text text-success">1</td>
     <td class="text text-danger">0</td>
-    <td class="text text-warning">1</td>
+    <td class="text text-warning">0</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
 </tr>
@@ -524,7 +449,7 @@ pt1.2.1: resourceId("com.cbnweekly:id/tabLL").childSelector(text("我的"))
     <script type="text/javascript">
 var data = [
 	{
-		value: 1,
+		value: 0,
 		color: "#f44455",
 		label: "Error",
 		labelColor: 'white',
