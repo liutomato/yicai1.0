@@ -36,6 +36,6 @@ class Action(object):
    #通过content-desc
    def findAI(driver, content_desc):
        f=WebDriverWait(driver,30).until(lambda driver:driver.find_element_by_accessibility_id(content_desc))
-       return f
+       return f00
 
 
