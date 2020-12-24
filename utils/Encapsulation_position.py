@@ -33,7 +33,7 @@ class Action(object):
        f=WebDriverWait(driver,30).until(lambda driver:driver.find_element_by_xpath(xpath))
        return f
 
-   #通过content-desc1111
+   #通过content-desc1
    def findAI(driver, content_desc):
        f=WebDriverWait(driver,30).until(lambda driver:driver.find_element_by_accessibility_id(content_desc))
        return
