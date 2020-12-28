@@ -1,9 +1,9 @@
-#首页banner滑动及点击
+#首页信息流滑动
 from appium import webdriver
 import unittest, time
-from Operator_case import Operator_home_banner
+from utils.Encapsulation_position import Action
 
-class BannerTest(unittest.TestCase):
+class HomeswipeTest(unittest.TestCase):
     def setUp(self):
         desired_caps={}
         desired_caps["platformName"]="Android"
@@ -12,12 +12,7 @@ class BannerTest(unittest.TestCase):
         desired_caps["appPackage"]="com.cbnweekly"
         desired_caps["appActivity"]="com.cbnweekly.ui.activity.SplashActivity"
         self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub",desired_caps)
-    def test_banner(self):
-        u"""首页banner滑动及点击"""
-        time.sleep(10)
-        self.driver.swipe(178,260,600,260,duration=100)
-        time.sleep(2)
-        Operator_home_banner.Op_home_banner.test_homebanner(self.driver)
-
-if __name__ == "__main__":
-    unittest.main()
+    def test_homeswipe(self):
+        u"""首页信息流滑动"""
+        time.sleep(5)
+        Action.swipeUp(self.driver)

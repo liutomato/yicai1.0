@@ -42,14 +42,16 @@ class Action(object):
    def swipepoint(driver,x1,y1,x2,y2):
        WebDriverWait(driver,30).until(lambda driver:driver.swipe(x1, y1, x2, y2, duration=1000))
 
-   # #向上滑动屏幕
-   # def swipeUp(driver, t=500, n=1):
-   #     l = driver.get_window_size()
-   #     x1 = l['width'] * 0.5
-   #     y1 = l['height'] * 0.75
-   #     y2 = l['height'] * 0.25
-   #     for i in range(n):
-   #         driver.swipe(x1, y1, x1, y2, t)
+   #向上滑动屏幕
+   def swipeUp(driver):
+       t=500
+       n=1
+       l = driver.get_window_size()
+       x1 = l['width'] * 0.5
+       y1 = l['height'] * 0.75
+       y2 = l['height'] * 0.25
+       for i in range(n):
+           driver.swipe(x1, y1, x1, y2, t)
    # #向下滑动屏幕
    # def swipeDown(driver, t=500, n=1):
    #     '''向下滑动屏幕'''
