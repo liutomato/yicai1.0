@@ -13,7 +13,7 @@ class HomeswipeTest(unittest.TestCase):
         desired_caps["appActivity"]="com.cbnweekly.ui.activity.SplashActivity"
         self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub",desired_caps)
     def test_homeswipe(self):
-        u"""首页信息流滑动11"""
+        u"""首页信息流滑动"""
         n=6
         while n>0:
             time.sleep(4)
