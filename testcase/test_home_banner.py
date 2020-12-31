@@ -19,5 +19,6 @@ class BannerTest(unittest.TestCase):
         time.sleep(2)
         Operator_home_banner.Op_home_banner.test_homebanner(self.driver)
 
+
 if __name__ == "__main__":
     unittest.main()
