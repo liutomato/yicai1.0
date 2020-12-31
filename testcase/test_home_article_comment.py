@@ -25,7 +25,7 @@ class CommentTest(unittest.TestCase):
         time.sleep(2)
         #点击文章进入详情页面
         Operator_home_article.Op_home_article.article(self.driver)
-        #评论框输入文字
+        #发表评论
         Operator_article_comment.Op_comment.article_comment(self.driver)
 
 
