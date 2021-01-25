@@ -1,11 +1,15 @@
-
+#操作类封装 20210125 刘燚更新
 from selenium.webdriver.support.wait import WebDriverWait
 from appium import webdriver
 
 class Action(object):
-   #通过resource-i定位
+   #通过resource-id定位
    def findId(driver, id):
        f=WebDriverWait(driver,30).until(lambda driver:driver.find_element_by_id(id))
+       return f
+   #通过多resource-id定位
+   def findIds(driver,id,no):
+       f=WebDriverWait(driver,30).until(lambda driver:driver.find_elements_by_id(id))[no]
        return f
 
    #通过class定位
