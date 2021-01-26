@@ -4,7 +4,6 @@
 '''
 from appium import webdriver
 import unittest, time
-import time
 from Operator_case import Operator_login_pw
 from Operator_case import Operator_home_article
 from Operator_case import Operator_article_comment

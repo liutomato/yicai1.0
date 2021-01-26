@@ -9,7 +9,8 @@ class Action(object):
        return f
    #通过多resource-id定位
    def findIds(driver,id,no):
-       f=WebDriverWait(driver,30).until(lambda driver:driver.find_elements_by_id(id))[no]
+       no1=int(no)
+       f=WebDriverWait(driver,30).until(lambda driver:driver.find_elements_by_id(id))[no1]
        return f
 
    #通过class定位
