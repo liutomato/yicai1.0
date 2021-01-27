@@ -1,4 +1,4 @@
-
+#登陆后搜索
 from appium import webdriver
 import unittest, time
 import time
@@ -16,8 +16,8 @@ class SearchTest(unittest.TestCase):
 
     def test_search(self):
         u"""搜索"""
-        #登录
-        Operator_login_pw.OP_Login_pw.test_login(self.driver)
+        # #登录
+        # Operator_login_pw.OP_Login_pw.test_login(self.driver)
         time.sleep(2)
         #搜索
         Operator_home_search.SearchTest.test_search(self.driver)
