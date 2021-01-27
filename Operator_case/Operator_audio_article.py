@@ -4,6 +4,6 @@ from utils.Encapsulation_position import Action
 class Op_audio_article:
     def audio_article(drvier):
 
-        #点击昨夜今晨
-        Action.findIds(drvier,'com.cbnweekly:id/im_logo','0').click()
+        #点击昨夜今晨的文章
+        Action.findIds(drvier,'com.cbnweekly:id/tv_title','0').click()
 

@@ -4,6 +4,8 @@ import unittest, time
 from Operator_case import Operator_audio
 from Operator_case import Operator_audio_zyjc
 from Operator_case import Operator_popup
+from Operator_case import Operator_audio_article
+from Operator_case import Operator_audio_article_zhankai
 class Playertest(unittest.TestCase):
     def setUp(self):
         desired_caps={}
@@ -20,3 +22,7 @@ class Playertest(unittest.TestCase):
         Operator_audio.Op_audio.Op_audio(self.driver)
         #进入昨夜今晨栏目合集
         Operator_audio_zyjc.Op_audio_zyjc.audio_zyjc(self.driver)
+        #进入第一篇文章
+        Operator_audio_article.Op_audio_article.audio_article(self.driver)
+        #点击展开按钮
+        Operator_audio_article_zhankai.Op_zhankai.Op_zhankai(self.driver)
