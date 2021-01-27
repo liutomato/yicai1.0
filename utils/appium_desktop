@@ -1,0 +1,7 @@
+{
+  "devicesName": "127.0.0.1:21503",
+  "appPackage": "com.cbnweekly",
+  "appActivity": "com.cbnweekly.ui.activity.SplashActivity",
+  "platformName": "Android",
+  "noReset": true
+}
