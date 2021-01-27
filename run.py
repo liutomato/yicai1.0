@@ -6,7 +6,7 @@ from utils import HTMLTestRunner
 listaa = "./testcase"
 def createsuite1():
     testunit=unittest.TestSuite()
-    discover=unittest.defaultTestLoader.discover(listaa,pattern='test_home_s*.py',top_level_dir=None)
+    discover=unittest.defaultTestLoader.discover(listaa,pattern='test_home_article_li*.py',top_level_dir=None)
     for test_suite in discover:
         for test_case in test_suite:
             testunit.addTests(test_case)
