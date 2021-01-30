@@ -17,6 +17,7 @@ class Playertest(unittest.TestCase):
         self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub",desired_caps)
     def test_player(self):
         u'''进入音频-作昨夜今晨'''
+        #调过隐私条款弹窗
         Operator_popup.Op_popup.Op_popup(self.driver)
         #进入音频模块
         Operator_audio.Op_audio.Op_audio(self.driver)

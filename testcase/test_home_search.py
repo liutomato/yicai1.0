@@ -4,6 +4,7 @@ import unittest, time
 import time
 from Operator_case import Operator_home_search
 from Operator_case import Operator_login_pw
+from Operator_case import Operator_popup
 class SearchTest(unittest.TestCase):
     def setUp(self):
         desired_caps={}
@@ -16,8 +17,11 @@ class SearchTest(unittest.TestCase):
 
     def test_search(self):
         u"""搜索"""
+        #调过隐私条款弹窗
+        Operator_popup.Op_popup.Op_popup(self.driver)
         # #登录
         # Operator_login_pw.OP_Login_pw.test_login(self.driver)
+
         time.sleep(2)
         #搜索
         Operator_home_search.SearchTest.test_search(self.driver)

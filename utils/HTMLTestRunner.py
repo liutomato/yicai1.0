@@ -161,10 +161,10 @@ class Template_mixin(object):
     """
 
     STATUS = {
-        0: 'pass',
-        1: 'fail',
-        2: 'error',
-        3: 'skip',
+        0: '通过',
+        1: '失败',
+        2: '错误',
+        3: '跳过',
     }
 
     DEFAULT_TITLE = 'Unit Test Report'
@@ -564,7 +564,7 @@ a.popup_link:hover {
         <table class="table my-0">
             <tbody>
             %(parameters)s
-            <tr><td>Description:</td><td class="text-right">%(description)s</td></tr>
+            <tr><td> </td><td class="text-right">%(description)s</td></tr>
             </tbody>
         </table>
         </div>
@@ -572,15 +572,19 @@ a.popup_link:hover {
 </div>
 
 <div style="float:left; margin-left: 10px; margin-top: 20px;">
-    <p> Test Case Pie charts </p>
+    <p> 测试执行情况 </p>
+    <a>通过</a><br>
     <h2 class="d-flex align-items-center mb-0 font-weight-light pass-color">%(pass_count)s</h2>
-    <a>PASSED</a><br>
+    
+    <a>失败</a>
     <h2 class="d-flex align-items-center mb-0 font-weight-light fail-color">%(fail_count)s</h2>
-    <a>FAILED</a>
+    
+    <a>错误</a><br>
     <h2 class="d-flex align-items-center mb-0 font-weight-light error-color">%(error_count)s</h2>
-    <a>ERRORS</a><br>
+    
+    <a>跳过</a><br>
     <h2 class="d-flex align-items-center mb-0 font-weight-light skip-color">%(skip_count)s</h2>
-    <a>SKIPED</a><br>
+    
 </div>
 <div class="testChars">
     <canvas id="myChart" width="250" height="250"></canvas>
@@ -644,28 +648,28 @@ var myNewChart = new Chart(ctx).Pie(data,newopts);
 
     REPORT_TMPL = """
 <p id='show_detail_line' style="margin-left: 10px; margin-top: 30px;">
-<a href='javascript:showCase(0, %(channel)s)' class="btn btn-dark btn-sm">Summary</a>
-<a href='javascript:showCase(1, %(channel)s)' class="btn btn-success btn-sm">Pass</a>
-<a href='javascript:showCase(2, %(channel)s)' class="btn btn-warning btn-sm">Failed</a>
-<a href='javascript:showCase(3, %(channel)s)' class="btn btn-danger btn-sm">Error</a>
-<a href='javascript:showCase(4, %(channel)s)' class="btn btn-light btn-sm">Skip</a>
-<a href='javascript:showCase(5, %(channel)s)' class="btn btn-info btn-sm">All</a>
+<a href='javascript:showCase(0, %(channel)s)' class="btn btn-dark btn-sm">概要</a>
+<a href='javascript:showCase(1, %(channel)s)' class="btn btn-success btn-sm">通过</a>
+<a href='javascript:showCase(2, %(channel)s)' class="btn btn-warning btn-sm">失败</a>
+<a href='javascript:showCase(3, %(channel)s)' class="btn btn-danger btn-sm">错误</a>
+<a href='javascript:showCase(4, %(channel)s)' class="btn btn-light btn-sm">跳过</a>
+<a href='javascript:showCase(5, %(channel)s)' class="btn btn-info btn-sm">全部</a>
 </p>
 <table class="table mb-0">
 <thead>
     <tr id='header_row'>
-        <td>Test Group/Test case</td>
-        <td>Count</td>
-        <td>Pass</td>
-        <td>Fail</td>
-        <td>Error</td>
-        <td>View</td>
-        <td>Screenshots</td>
+        <td>测试套件/用例</td>
+        <td>合计</td>
+        <td>通过</td>
+        <td>失败</td>
+        <td>错误</td>
+        <td>详情</td>
+        <td>屏幕截图</td>
     </tr>
 </thead>
 %(test_list)s
 <tr id='total_row'>
-    <td>Total</td>
+    <td>合计</td>
     <td>%(count)s</td>
     <td class="text text-success">%(Pass)s</td>
     <td class="text text-danger">%(fail)s</td>
@@ -683,7 +687,7 @@ var myNewChart = new Chart(ctx).Pie(data,newopts);
     <td>%(Pass)s</td>
     <td>%(fail)s</td>
     <td>%(error)s</td>
-    <td><a href="javascript:showClassDetail('%(cid)s',%(count)s)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('%(cid)s',%(count)s)">详情</a></td>
     <td>&nbsp;</td>
 </tr>
 """  # variables: (style, desc, count, Pass, fail, error, cid)
@@ -753,7 +757,7 @@ class _TestResult(TestResult):
         self.stderr0 = None
         self.success_count = 0
         self.failure_count = 0
-        self.error_count = 0        
+        self.error_count = 0
         self.skip_count = 0
         self.verbosity = verbosity
 
@@ -953,13 +957,13 @@ class HTMLTestRunner(Template_mixin):
         status = []
         print("bbbb", result.result)
         if result.success_count:
-            status.append('Passed:%s' % result.success_count)
+            status.append('通过:%s' % result.success_count)
         if result.failure_count:
-            status.append('Failed:%s' % result.failure_count)
+            status.append('失败:%s' % result.failure_count)
         if result.error_count:
-            status.append('Errors:%s' % result.error_count)
+            status.append('错误:%s' % result.error_count)
         if result.skip_count:
-            status.append('Skiped:%s' % result.skip_count)
+            status.append('跳过:%s' % result.skip_count)
         if status:
             status = ' '.join(status)
         else:
@@ -971,9 +975,9 @@ class HTMLTestRunner(Template_mixin):
             "skip": result.skip_count,
         }
         return [
-            ('Start Time', startTime),
-            ('Duration', duration),
-            ('Status', status),
+            ('开始时间', startTime),
+            ('持续时间', duration),
+            ('状态', status),
             ('Result', result),
         ]
 

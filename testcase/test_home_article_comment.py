@@ -7,6 +7,7 @@ import unittest, time
 from Operator_case import Operator_login_pw
 from Operator_case import Operator_home_article
 from Operator_case import Operator_article_comment
+from Operator_case import Operator_popup
 class CommentTest(unittest.TestCase):
     def setUp(self):
         desired_caps={}
@@ -19,6 +20,8 @@ class CommentTest(unittest.TestCase):
 
     def test_comment(self):
         u"""首页文章详情页发表评论"""
+        #调过隐私条款弹窗
+        Operator_popup.Op_popup.Op_popup(self.driver)
         #登录
         Operator_login_pw.OP_Login_pw.test_login(self.driver)
         time.sleep(2)

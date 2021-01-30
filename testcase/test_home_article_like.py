@@ -8,6 +8,7 @@ from time import  sleep
 from Operator_case.Operator_article_like import Op_like
 from Operator_case.Operator_home_article import Op_home_article
 from Operator_case import Operator_login_pw
+from Operator_case import Operator_popup
 class LikeTest(unittest.TestCase):
     def setUp(self):
         desired_caps={}
@@ -19,7 +20,9 @@ class LikeTest(unittest.TestCase):
         self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub",desired_caps)
     def test_like(self):
         '''点赞'''
-                #登录
+        #调过隐私条款弹窗
+        Operator_popup.Op_popup.Op_popup(self.driver)
+        #登录
         Operator_login_pw.OP_Login_pw.test_login(self.driver)
         sleep(2)
         #点击文章
