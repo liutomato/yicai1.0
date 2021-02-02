@@ -1,12 +1,13 @@
 import time
 import unittest
+import os
 
 from utils import HTMLTestRunner
 
-listaa = "./testcase"
+listcase = "./testcase"
 def createsuite1():
     testunit=unittest.TestSuite()
-    discover=unittest.defaultTestLoader.discover(listaa,pattern='test_home_s*.py',top_level_dir=None)
+    discover=unittest.defaultTestLoader.discover(listcase,pattern='test_home_s*.py',top_level_dir=None)
     for test_suite in discover:
         for test_case in test_suite:
             testunit.addTests(test_case)
@@ -14,9 +15,10 @@ def createsuite1():
     return testunit
 
 now = time.strftime("%Y-%m-%d %H_%M_%S",time.localtime())
-filename=now+"_result.html"
+#os.getcwd()获取当前路径
+filename=os.getcwd()+'\\report\\'+now+"_result.html"
 fp=open(filename,'wb')
-
+# print(filename)
 runner= HTMLTestRunner.HTMLTestRunner(
     stream=fp,
     title=u'第一财经测试报告',
@@ -26,3 +28,4 @@ runner.run(createsuite1())
 
 #关闭文件流，不关的话生成的报告是空的
 fp.close()
+
