@@ -15,7 +15,7 @@ def createsuite1():
     return testunit
 
 now = time.strftime("%Y-%m-%d %H_%M_%S",time.localtime())
-#os.getcwd()获取当前路径
+#os.getcwd()获取当前路径1
 filename=os.getcwd()+'\\report\\'+now+"_result.html"
 fp=open(filename,'wb')
 # print(filename)
