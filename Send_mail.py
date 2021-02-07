@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-1
+#20210207
 import os
 import pathlib
 import smtplib
@@ -15,7 +14,7 @@ my_pass = 'Ly106ly.'
 my_user = '1085195862@qq.com'
 
 def mail():
-    ret = True
+    flag = True
     try:
         # 邮件内容
         msg = MIMEMultipart()
@@ -28,11 +27,8 @@ def mail():
         path = os.getcwd() + '\\report'
         print(path)
         lists=os.listdir(path)  # 列出目录的下所有文件和文件夹保存到lists
-        print(1)
-        lists.sort(key=lambda fn: os.path.getctime(path + "\\" + fn), reverse=True)  # 按创建时间升序
-        print(4)
-        file=lists[0]  # 取最新的文件
-        print(lists[0])
+        lists.sort(key=lambda fn: os.path.getctime(path + "\\" + fn), reverse=True)  # 创建时间升序
+        file=os.getcwd() + '\\report\\'+lists[0]  # 取最新的文件并加上路径
         mail_file = MIMEApplication(open(file, 'rb').read())  # 打开附件
         mail_file.add_header('Content-Disposition', 'attachment', filename=pathlib.Path(file).name)  # 为附件命名
         msg.attach(mail_file)  # 添加附件
@@ -51,14 +47,14 @@ def mail():
         server.sendmail(my_sender, [my_user, ], msg.as_string())
         # 关闭连接
         server.quit()
-        # 如果 try 中的语句没有执行，则会执行下面的 ret=False
+        # 如果 try 中的语句没有执行，则会执行下面的 flag=False
     except Exception:
-        ret = False
-    return ret
+        flag = False
+    return flag
 
 
-ret = mail()
-if ret:
+flag = mail()
+if flag:
     print("邮件发送成功")
 else:
     print("邮件发送失败")
