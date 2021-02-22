@@ -6,6 +6,7 @@ from Operator_case import Operator_audio_zyjc
 from Operator_case import Operator_popup
 from Operator_case import Operator_audio_article
 from Operator_case import Operator_audio_article_zhankai
+from utils import Encapsulation_position
 class Playertest(unittest.TestCase):
     def setUp(self):
         desired_caps={}
@@ -21,6 +22,7 @@ class Playertest(unittest.TestCase):
         Operator_popup.Op_popup.Op_popup(self.driver)
         #进入音频模块
         Operator_audio.Op_audio.Op_audio(self.driver)
+        Encapsulation_position.Action.savescreenshot(self.driver)
         #进入昨夜今晨栏目合集
         Operator_audio_zyjc.Op_audio_zyjc.audio_zyjc(self.driver)
         #进入第一篇文章

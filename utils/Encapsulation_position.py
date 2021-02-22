@@ -1,6 +1,7 @@
 #操作类封装 20210125 刘燚更新
 from selenium.webdriver.support.wait import WebDriverWait
 from appium import webdriver
+import os
 
 class Action(object):
    #通过resource-id定位
@@ -84,5 +85,12 @@ class Action(object):
    #     x2 = l['width'] * 0.75
    #     for i in range(n):
    #         driver.swipe(x1, y1, x2, y1, t)
+   #截图并保持至本地
+   def savescreenshot(driver):
+       print('lllll')
+       #filenamerootpath根目录路径
+       screenshotname=os.getcwd()+'\\screenshot'+'\\001.png'
+       print(screenshotname)
+       driver.get_screenshot_as_file(screenshotname)
 
 
