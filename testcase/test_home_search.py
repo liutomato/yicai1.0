@@ -1,4 +1,6 @@
 #登陆后搜索
+import traceback
+
 from appium import webdriver
 import unittest, time
 import time
@@ -14,17 +16,19 @@ class SearchTest(unittest.TestCase):
         desired_caps["appPackage"]="com.cbnweekly"
         desired_caps["appActivity"]="com.cbnweekly.ui.activity.SplashActivity"
         self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub",desired_caps)
-
     def test_search(self):
         u"""搜索"""
-        #调过隐私条款弹窗
-        Operator_popup.Op_popup.Op_popup(self.driver)
-        # #登录
-        # Operator_login_pw.OP_Login_pw.test_login(self.driver)
+        try:
+            #调过隐私条款弹窗
+            # Operator_popup.Op_popup.Op_popup(self.driver)
+            # #登录
+            # Operator_login_pw.OP_Login_pw.test_login(self.driver)
 
-        time.sleep(2)
-        #搜索
-        Operator_home_search.SearchTest.test_search(self.driver)
+            time.sleep(2)
+            #搜索
+            Operator_home_search.SearchTest.test_search(self.driver)
+        except :
+            self.assert_()
 
 
 if __name__ == "__main__":
